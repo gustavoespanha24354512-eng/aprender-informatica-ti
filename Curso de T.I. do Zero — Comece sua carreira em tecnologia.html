@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Curso de T.I. do Zero — Comece sua carreira em tecnologia</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050F09;--card:#0C2418;--ink:#E6F7EC;--mut:#93B9A1;--g0:#020A06;--g1:#07281A;--g2:#14935A;--g3:#34E08A;--soft:#081A10;--line:#17402C;--gold:#FFC83D;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Figtree,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.08;margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:68px 0}
+h2{font-size:clamp(28px,4.6vw,44px);font-weight:800;letter-spacing:-.02em;max-width:20ch}
+.lead{color:var(--mut);max-width:58ch;margin:12px 0 0}
+.cta{display:inline-block;background:linear-gradient(180deg,#5DF0A5,var(--g3));color:#042814;font-weight:800;font-size:18px;padding:17px 30px;border-radius:14px;text-decoration:none;box-shadow:0 7px 0 #0A7A44,0 16px 24px rgba(5,60,35,.35);transition:transform .12s,box-shadow .12s}
+.cta:hover{transform:translateY(3px);box-shadow:0 4px 0 #0A7A44,0 8px 14px rgba(5,60,35,.35)}
+.cta:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.bar{background:var(--g0);color:#D5F5E2;text-align:center;font-size:14px;padding:9px 12px}
+.bar b{color:var(--gold)}
+/* HERO 3D */
+.hero{background:radial-gradient(circle at 75% 40%,#0E5C3C 0,var(--g1) 40%,var(--g0) 100%);color:#EAF9F0;padding:60px 0 84px;overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(52,224,138,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(52,224,138,.08) 1px,transparent 1px);background-size:44px 44px;transform:perspective(500px) rotateX(58deg) translateY(30%);transform-origin:bottom;mask-image:linear-gradient(transparent,#000 70%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;position:relative}
+.hero h1{font-size:clamp(36px,6.2vw,64px);font-weight:800;letter-spacing:-.03em;text-shadow:0 1px 0 #0A7A44,0 2px 0 #0A6A3C,0 3px 0 #095A33,0 4px 0 #084A2A,0 10px 20px rgba(0,0,0,.4)}
+.hero p{color:#BCE6CB;max-width:48ch;margin:20px 0 28px;font-size:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chips span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);padding:6px 14px;border-radius:99px;font-size:14px;font-weight:500}
+.stage{display:grid;place-items:center;height:400px;perspective:1000px;position:relative}
+.cube{width:210px;height:210px;position:relative;transform-style:preserve-3d;transform:rotateX(-22deg) rotateY(30deg);animation:spin 20s linear infinite}
+@keyframes spin{to{transform:rotateX(-22deg) rotateY(390deg)}}
+.face{position:absolute;inset:0;display:grid;place-items:center;text-align:center;background:linear-gradient(145deg,rgba(52,224,138,.92),rgba(14,125,80,.92));border:2px solid rgba(255,255,255,.55);border-radius:18px;color:#042814;font:800 22px/1.1 'Bricolage Grotesque';box-shadow:inset 0 0 40px rgba(255,255,255,.35)}
+.face i{display:block;font-style:normal;font-size:56px;margin-bottom:6px}
+.f1{transform:translateZ(105px)}.f2{transform:rotateY(180deg) translateZ(105px)}.f3{transform:rotateY(90deg) translateZ(105px)}.f4{transform:rotateY(-90deg) translateZ(105px)}.f5{transform:rotateX(90deg) translateZ(105px)}.f6{transform:rotateX(-90deg) translateZ(105px)}
+.shadow{position:absolute;bottom:34px;width:230px;height:40px;border-radius:50%;background:radial-gradient(rgba(0,0,0,.5),transparent 70%);filter:blur(6px)}
+.orb{position:absolute;background:#fff;color:var(--g1);font-weight:800;font-size:13px;padding:8px 14px;border-radius:12px;box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.o1{top:30px;left:0;animation:fl 5s ease-in-out infinite}.o2{top:80px;right:0;animation:fl 6s -2s ease-in-out infinite}.o3{bottom:70px;left:10px;animation:fl 7s -1s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-14px)}}
+@media (prefers-reduced-motion:reduce){.cube,.orb{animation:none}}
+/* MODULOS 3D */
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;margin-top:36px;perspective:1100px}
+.tilt{transform-style:preserve-3d;transition:transform .15s ease-out;will-change:transform}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 14px 0 -6px #04100A,0 22px 40px rgba(0,0,0,.5)}
+.mod .ic{width:58px;height:58px;border-radius:16px;background:linear-gradient(145deg,var(--g3),var(--g2));display:grid;place-items:center;font-size:28px;box-shadow:0 8px 0 #0B6A3E;transform:translateZ(40px)}
+.mod h3{font-size:21px;margin:22px 0 8px;transform:translateZ(24px)}
+.mod ul{margin:0;padding-left:18px;color:var(--mut);font-size:15.5px}
+.mod li{margin:4px 0}
+/* para quem */
+.who{background:var(--soft)}
+.whoG{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:30px}
+.whoG div{background:var(--card);border-radius:16px;padding:20px;border:1px solid var(--line);box-shadow:0 6px 0 var(--line)}
+.whoG b{display:block;font:800 19px 'Bricolage Grotesque';margin-bottom:6px}
+.whoG span{color:var(--mut);font-size:15.5px}
+/* oferta */
+.offer{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;perspective:1200px}
+.list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+.list li{display:flex;gap:12px}
+.list li:before{content:"✓";flex:none;width:26px;height:26px;border-radius:50%;background:var(--g3);color:#042814;font-weight:800;display:grid;place-items:center;font-size:14px;margin-top:2px;box-shadow:0 3px 0 #0A7A44}
+.checkout{background:var(--card);border:2px solid var(--g2);border-radius:24px;padding:28px;box-shadow:0 18px 0 -6px var(--g2),0 34px 70px rgba(20,147,90,.25)}
+.timer{display:flex;gap:8px;align-items:center;justify-content:center;background:#3A2C06;color:#FFD870;border-radius:12px;padding:9px;font-weight:700;font-size:14px}
+.timer b{font:800 21px 'Bricolage Grotesque';font-variant-numeric:tabular-nums}
+.old{text-decoration:line-through;color:var(--mut);margin-top:20px;text-align:center}
+.price{text-align:center;font:800 64px/1 'Bricolage Grotesque';letter-spacing:-.03em;margin:4px 0;color:var(--g3);text-shadow:0 3px 0 #0A5A35,0 10px 20px rgba(0,0,0,.5)}
+.price small{font-size:22px;font-weight:700;vertical-align:top;margin:0 3px}
+.parc{text-align:center;color:var(--mut);margin-bottom:20px;font-size:15px}
+.checkout .cta{display:block;text-align:center}
+.pay{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+.pay span{font-size:12.5px;font-weight:700;border:1px solid var(--line);border-radius:8px;padding:5px 10px;color:var(--mut)}
+.pay .pix{color:#0A7D6E;border-color:#0A7D6E}
+.pixbox{margin-top:20px;border:1.5px dashed #0FB5A0;border-radius:16px;padding:16px;background:rgba(15,181,160,.07);text-align:center}
+.pixbox h4{margin:0 0 4px;font:800 17px 'Bricolage Grotesque',Figtree,sans-serif;color:#3FE5CF}
+.pixbox p{margin:0 0 12px;font-size:13.5px;color:var(--mut);line-height:1.5}
+.qrbox{width:208px;height:208px;margin:0 auto 14px;background:#fff;border-radius:14px;padding:10px;display:grid;place-items:center}.qrbox img,.qrbox canvas{max-width:100%;height:auto;display:block}.pixcopy{cursor:pointer;border:0;border-radius:10px;padding:12px 18px;font:800 14px Figtree,sans-serif;background:#0FB5A0;color:#02231E;box-shadow:0 4px 0 #087568}.pixcopy:active{transform:translateY(2px);box-shadow:0 2px 0 #087568}.pixcopy:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.pixkey{display:flex;gap:8px;align-items:stretch}
+.pixkey code{flex:1;display:grid;place-items:center;background:var(--bg);border:1px solid var(--line);border-radius:10px;font:700 16px ui-monospace,Menlo,Consolas,monospace;letter-spacing:.04em;padding:10px}
+.pixkey button{cursor:pointer;border:0;border-radius:10px;padding:0 18px;font:800 14px Figtree,sans-serif;background:#0FB5A0;color:#02231E;box-shadow:0 4px 0 #087568}
+.pixkey button:active{transform:translateY(2px);box-shadow:0 2px 0 #087568}
+.pixkey button:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#zap{display:none;margin-top:10px;font-size:14px;font-weight:700;color:#3FE5CF}
+.sec{text-align:center;color:var(--mut);font-size:13px;margin-top:14px}
+/* garantia */
+.gar{display:flex;gap:30px;align-items:center;background:linear-gradient(135deg,#0B3D27,var(--g0));border:1px solid var(--line);color:#EAF9F0;border-radius:26px;padding:38px;box-shadow:0 14px 0 -4px #052316,0 30px 50px rgba(5,40,24,.3)}
+.seal{flex:none;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#FFE59A,#E0A515 70%);color:#4A3300;display:grid;place-items:center;text-align:center;font:800 14px/1.1 'Bricolage Grotesque';box-shadow:0 8px 0 #9A6D00,0 0 0 8px rgba(255,255,255,.12)}
+.seal b{display:block;font-size:48px;line-height:1}
+.gar h2{max-width:none;font-size:clamp(24px,3.5vw,34px)}.gar p{color:#BCE6CB;margin:10px 0 0;max-width:62ch}
+/* faq */
+.faq{max-width:800px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-top:12px;padding:0 22px;box-shadow:0 5px 0 var(--line)}
+details[open]{border-color:var(--g2);box-shadow:0 5px 0 var(--g2)}
+summary{cursor:pointer;padding:18px 0;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;background:var(--g3);color:#042814;display:grid;place-items:center;font-size:20px;font-weight:800}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 14px;color:var(--mut)}
+details p:last-child{margin-bottom:20px}
+footer{background:var(--g0);color:#9CCBB0;text-align:center;font-size:13px;padding:38px 20px 46px}
+footer p{max-width:70ch;margin:10px auto 0}
+@media (max-width:820px){.hero .wrap,.offer{grid-template-columns:1fr}.stage{height:340px}.cube{width:170px;height:170px}.f1{transform:translateZ(85px)}.f2{transform:rotateY(180deg) translateZ(85px)}.f3{transform:rotateY(90deg) translateZ(85px)}.f4{transform:rotateY(-90deg) translateZ(85px)}.f5{transform:rotateX(90deg) translateZ(85px)}.f6{transform:rotateX(-90deg) translateZ(85px)}.gar{flex-direction:column;text-align:center;padding:30px 22px}section{padding:50px 0}}
+</style>
+</head>
+<body>
+
+<div class="bar">Oferta de lançamento: <b>curso completo por R$ 94,99</b> — vale até o contador zerar</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Aprenda T.I. do zero e entre no mercado de tecnologia</h1>
+      <p>Redes, suporte técnico, programação e segurança da informação em um único curso, com aulas diretas e exercícios práticos. Feito para quem está começando.</p>
+      <a class="cta" href="#oferta">Quero aprender T.I. agora</a>
+      <div class="chips"><span>Acesso imediato</span><span>Estude no seu ritmo</span><span>Certificado garantido</span><span>7 dias de garantia</span></div>
+    </div>
+    <div class="stage">
+      <div class="orb o1">Redes</div><div class="orb o2">Python</div><div class="orb o3">Segurança</div>
+      <div class="cube">
+        <div class="face f1"><div><i>🌐</i>Redes</div></div>
+        <div class="face f2"><div><i>💻</i>Suporte</div></div>
+        <div class="face f3"><div><i>⌨️</i>Código</div></div>
+        <div class="face f4"><div><i>🛡️</i>Segurança</div></div>
+        <div class="face f5"><div><i>☁️</i>Nuvem</div></div>
+        <div class="face f6"><div><i>🖥️</i>Hardware</div></div>
+      </div>
+      <div class="shadow"></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Seis módulos para sair do zero e chegar à primeira vaga</h2>
+    <p class="lead">Cada módulo vai da teoria direto para a prática, para você entender o que está fazendo e não só decorar comandos.</p>
+    <div class="mods">
+      <div class="mod tilt"><div class="ic">🖥️</div><h3>Fundamentos de T.I.</h3><ul><li>Como funcionam computador, processador e memória</li><li>Windows e Linux na prática</li><li>Pastas, arquivos e atalhos que poupam tempo</li></ul></div>
+      <div class="mod tilt"><div class="ic">🌐</div><h3>Redes de computadores</h3><ul><li>IP, DNS, roteador e Wi-Fi explicados</li><li>Como a internet chega até você</li><li>Montagem e teste de uma rede doméstica</li></ul></div>
+      <div class="mod tilt"><div class="ic">🛠️</div><h3>Suporte técnico</h3><ul><li>Diagnóstico de lentidão, travamentos e erros</li><li>Formatação e instalação de programas</li><li>Como atender o usuário com clareza</li></ul></div>
+      <div class="mod tilt"><div class="ic">⌨️</div><h3>Lógica e programação</h3><ul><li>Algoritmos e raciocínio lógico</li><li>Primeiros códigos em Python</li><li>Automatizando pequenas tarefas</li></ul></div>
+      <div class="mod tilt"><div class="ic">🛡️</div><h3>Segurança da informação</h3><ul><li>Senhas fortes e autenticação em dois fatores</li><li>Como reconhecer phishing e golpes</li><li>Backup e proteção de dados</li></ul></div>
+      <div class="mod tilt"><div class="ic">🚀</div><h3>Carreira em T.I.</h3><ul><li>Áreas e cargos de entrada no mercado</li><li>Currículo e LinkedIn para a área</li><li>Como se preparar para entrevistas</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="who">
+  <div class="wrap">
+    <h2>Este curso é para você se...</h2>
+    <div class="whoG">
+      <div><b>Está começando</b><span>Nunca estudou tecnologia e quer um caminho claro, sem termos complicados.</span></div>
+      <div><b>Quer mudar de área</b><span>Trabalha em outra profissão e deseja entrar em T.I. aos poucos, estudando no seu tempo.</span></div>
+      <div><b>Quer o primeiro emprego</b><span>Busca estágio ou vaga de entrada em suporte, redes ou infraestrutura.</span></div>
+      <div><b>Quer entender melhor</b><span>Usa tecnologia todo dia e quer resolver os próprios problemas e se proteger online.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="oferta">
+  <div class="wrap offer">
+    <div>
+      <h2>Tudo que você recebe ao entrar hoje</h2>
+      <ul class="list">
+        <li>Curso completo de T.I. em vídeo, com acesso imediato</li>
+        <li>Exercícios práticos ao final de cada módulo</li>
+        <li>Material de apoio em PDF para baixar</li>
+        <li>Bônus: guia para montar currículo e buscar a primeira vaga</li>
+        <li><b>Certificado de conclusão garantido</b> ao finalizar o curso</li>
+        <li>Atualizações do conteúdo sem custo extra</li>
+      </ul>
+    </div>
+    <div class="checkout tilt">
+      <div class="timer">Oferta termina em <b id="t">15:00</b></div>
+      <div class="old">De R$ 297,00 por apenas</div>
+      <div class="price"><small>R$</small>94<small>,99</small></div>
+      <div class="parc">no Pix ou em até 12x no cartão</div>
+      <a class="cta" href="#">Comprar agora</a>
+      <div class="pay"><span class="pix">Pix</span><span>Cartão</span><span>Boleto</span></div>
+      <div class="pixbox">
+        <h4>Prefere pagar direto por Pix?</h4>
+        <p>Abra o app do seu banco, escolha pagar com Pix e aponte a câmera para o QR Code. Depois envie o comprovante para liberarmos seu acesso. Valor: R$ 94,99.</p>
+        <div id="qr" class="qrbox" role="img" aria-label="QR Code Pix no valor de R$ 94,99"></div>
+        <button type="button" id="copiar" class="pixcopy">Copiar Pix copia e cola</button>
+        <p id="qrmsg" style="margin:10px 0 0"></p>
+        <a id="zap" href="#" target="_blank" rel="noopener">Enviar comprovante no WhatsApp</a>
+      </div>
+      <div class="sec">🔒 Cartão e boleto processados pelo Mercado Pago</div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="gar">
+      <div class="seal"><div><b>7</b>dias de<br>garantia</div></div>
+      <div>
+        <h2>Compre sem risco</h2>
+        <p>Se em até 7 dias você sentir que o curso não é para você, peça o reembolso e receba 100% do valor de volta, sem burocracia e sem precisar justificar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap faq">
+    <h2>Perguntas frequentes</h2>
+    <details open><summary>Preciso saber alguma coisa de tecnologia para começar?</summary><p>Não. O curso parte do absoluto zero: você começa entendendo o que é um computador e como ele funciona, e só depois avança para redes, suporte e programação.</p><p>Cada termo técnico é explicado com exemplos do dia a dia, então não importa se você nunca abriu um computador por dentro.</p></details>
+    <details><summary>Como e quando recebo o acesso ao curso?</summary><p>Assim que o pagamento é confirmado, você recebe as instruções de acesso ao curso por e-mail. No Pix pelo Mercado Pago, a confirmação costuma ser imediata. No Pix direto pelo QR Code, o acesso é liberado assim que você enviar o comprovante e o pagamento for conferido. No cartão, em poucos minutos. No boleto, pode levar até 3 dias úteis.</p><p>Se o e-mail não chegar, olhe a caixa de spam e a aba de promoções antes de pedir ajuda.</p></details>
+    <details><summary>Quanto tempo leva para concluir o curso?</summary><p>Estudando cerca de 1 hora por dia, a maioria das pessoas conclui os módulos em poucas semanas. Como o acesso é seu e as aulas ficam gravadas, você pode ir mais rápido, mais devagar ou rever o conteúdo quando quiser.</p></details>
+    <details><summary>Preciso de um computador potente ou de programas pagos?</summary><p>Não. Um computador ou notebook comum, com internet, já é suficiente para acompanhar as aulas e fazer os exercícios. Os programas usados no curso são gratuitos.</p><p>Você também consegue assistir pelo celular ou tablet, mas para as partes práticas o computador é o ideal.</p></details>
+    <details><summary>O curso ensina a programar?</summary><p>Sim, de forma introdutória. Você aprende lógica de programação e escreve seus primeiros códigos em Python, incluindo pequenos programas que automatizam tarefas. É a base para você decidir se quer seguir carreira como programador ou em outra área de T.I.</p></details>
+    <details><summary>O curso dá certificado?</summary><p>Sim, o certificado de conclusão é garantido para todos os alunos que finalizarem o curso. Ele comprova a sua formação e pode ser usado no currículo e no LinkedIn.</p><p>Assim que você terminar os módulos, é só solicitar o certificado e receber o documento.</p></details>
+    <details><summary>Vou conseguir emprego depois do curso?</summary><p>O curso ensina as habilidades de entrada mais pedidas, como suporte técnico, noções de redes e segurança, e traz um guia de currículo e entrevistas. Ele aumenta bastante suas chances, mas ninguém pode garantir uma vaga, pois isso depende do seu empenho, da prática e do mercado da sua região.</p><p>O que garantimos é conteúdo claro, aplicável e que você pode revisar sempre que precisar.</p></details>
+    <details><summary>Quais são as formas de pagamento?</summary><p>Você pode pagar por Pix, por cartão de crédito em até 12x, ou por boleto bancário. Todo o pagamento é processado pelo Mercado Pago, plataforma segura e muito usada no Brasil, e seus dados do cartão não ficam com a gente.</p></details>
+    <details><summary>E se eu não gostar? Como funciona a garantia?</summary><p>Você tem 7 dias corridos, a partir da compra, para pedir o reembolso total. Basta entrar em contato por e-mail, e o valor volta para você pelo mesmo meio de pagamento, sem perguntas e sem burocracia.</p></details>
+    <details><summary>Por quanto tempo terei acesso ao conteúdo?</summary><p>O acesso é ao conteúdo adquirido, com atualizações incluídas sem custo adicional. Você pode assistir quantas vezes quiser, no seu ritmo, de qualquer dispositivo.</p></details>
+  </div>
+</section>
+
+<footer>
+  <a class="cta" href="#oferta">Garantir minha vaga por R$ 94,99</a>
+  <p>© Seu Nome. Todos os direitos reservados.</p>
+  <p>Os resultados variam de pessoa para pessoa e dependem de dedicação aos estudos. Esta página não é afiliada a nenhuma empresa de tecnologia citada.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+var PIX_PAYLOAD = "00020101021126330014BR.GOV.BCB.PIX011115906690700520400005303986540594.995802BR5911Curso de TI6006BRASIL62070503***63044281";
+(function(){var q=document.getElementById("qr");try{new QRCode(q,{text:PIX_PAYLOAD,width:188,height:188,correctLevel:QRCode.CorrectLevel.M})}catch(e){q.style.display="none";document.getElementById("qrmsg").textContent="Não foi possível mostrar o QR Code. Use o botão abaixo para copiar o Pix."}})();
+// Link de pagamento (Mercado Pago):
+var KIWIFY_LINK = "https://mpago.li/1Dwpv16";
+if (KIWIFY_LINK !== "#") document.querySelectorAll('.hero .cta, .checkout .cta, footer .cta').forEach(function(a){ a.href = KIWIFY_LINK; });
+var left = 900, el = document.getElementById('t');
+setInterval(function(){ left = left > 0 ? left - 1 : 900; el.textContent = String(Math.floor(left/60)).padStart(2,'0') + ':' + String(left%60).padStart(2,'0'); }, 1000);
+var CONTATO_WHATSAPP = ""; // ex: 5527999999999
+if (CONTATO_WHATSAPP) { var z = document.getElementById('zap'); z.href = 'https://wa.me/' + CONTATO_WHATSAPP + '?text=' + encodeURIComponent('Olá! Paguei o curso de T.I. por Pix. Segue o comprovante.'); z.style.display = 'inline-block'; }
+document.getElementById('copiar').addEventListener('click', function(){
+  var b = this, k = PIX_PAYLOAD;
+  function ok(){ b.textContent = 'Copiado!'; setTimeout(function(){ b.textContent = 'Copiar Pix copia e cola'; }, 2000); }
+  try { navigator.clipboard.writeText(k).then(ok, fb); } catch(e){ fb(); }
+  function fb(){ var t=document.createElement('textarea'); t.value=k; document.body.appendChild(t); t.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(t); ok(); }
+});
+// inclinação 3D ao passar o mouse
+if (!matchMedia('(prefers-reduced-motion:reduce)').matches && matchMedia('(hover:hover)').matches) {
+  document.querySelectorAll('.tilt').forEach(function(c){
+    c.addEventListener('mousemove', function(e){ var r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5; c.style.transform='rotateX('+(-y*12)+'deg) rotateY('+(x*14)+'deg) translateY(-4px)'; });
+    c.addEventListener('mouseleave', function(){ c.style.transform=''; });
+  });
+}
+</script>
+</body>
+</html>
